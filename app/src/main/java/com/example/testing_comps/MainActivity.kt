@@ -30,7 +30,9 @@ fun FAQ(answer: Answer) {
                 .background(Color(0xFF12395B))
                 .fillMaxWidth()
         ) {
-            Column(modifier = Modifier.offset((-offset).dp)) {
+            Column(modifier = Modifier
+                .padding(24.dp)
+                .offset((-offset).dp)) {
                 PopulateFAQ(answer)
             }
         }
@@ -64,7 +66,7 @@ fun AnswerTitle(title: String) {
         style = TextStyle(
             fontWeight = FontWeight.Bold,
             fontSize = 22.sp,
-            color = Color.Magenta
+            color = Color.Cyan
         )
     )
 }
@@ -97,7 +99,9 @@ fun AnswerFootnote(footnote: String) {
 @Composable
 fun TitleOnlyPreview() {
     TestingcompsTheme {
-        Answer("The Best Sugar Cookie Recipe with Sugar Cookie Icing", null, "")
+        FAQ(
+            Answer("The Best Sugar Cookie Recipe with Sugar Cookie Icing", null, "")
+        )
     }
 }
 
@@ -105,10 +109,12 @@ fun TitleOnlyPreview() {
 @Composable
 fun DescriptionOnlyPreview() {
     TestingcompsTheme {
-        Answer(
-            "",
-            "These soft sugar cookies are the best sugar cookies for your holiday cookie plate! Make a tray with these cookies, Peanut Butter Blossoms, Meringue Cookies, Hot Cocoa Cookies and Chocolate Crinkle Cookies. Throw on some individually wrapped Homemade Caramel Candy and you’ve got the perfect edible gift!",
-            ""
+        FAQ(
+            Answer(
+                "",
+                "These soft sugar cookies are the best sugar cookies for your holiday cookie plate! Make a tray with these cookies, Peanut Butter Blossoms, Meringue Cookies, Hot Cocoa Cookies and Chocolate Crinkle Cookies. Throw on some individually wrapped Homemade Caramel Candy and you’ve got the perfect edible gift!",
+                ""
+            )
         )
     }
 }
@@ -117,10 +123,12 @@ fun DescriptionOnlyPreview() {
 @Composable
 fun TitleDescriptionFootnotePreview() {
     TestingcompsTheme {
-        Answer(
-            "The Best Sugar Cookie Recipe with Sugar Cookie Icing",
-            "These soft sugar cookies are the best sugar cookies for your holiday cookie plate! Make a tray with these cookies, Peanut Butter Blossoms, Meringue Cookies, Hot Cocoa Cookies and Chocolate Crinkle Cookies. Throw on some individually wrapped Homemade Caramel Candy and you’ve got the perfect edible gift!",
-            "Literally - THE BEST"
+        FAQ(
+            Answer(
+                "The Best Sugar Cookie Recipe with Sugar Cookie Icing",
+                "These soft sugar cookies are the best sugar cookies for your holiday cookie plate! Make a tray with these cookies, Peanut Butter Blossoms, Meringue Cookies, Hot Cocoa Cookies and Chocolate Crinkle Cookies. Throw on some individually wrapped Homemade Caramel Candy and you’ve got the perfect edible gift!",
+                "Literally - THE BEST"
+            )
         )
     }
 }
